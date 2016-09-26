@@ -2,9 +2,12 @@
 
 @section('h')
     <style>
-    .logout-position {
-      position: absolute;
-      bottom: 0;
+    .bg {
+      background-position: center center;
+      background-image: -moz-radial-gradient(center center, circle, rgba(255,255,255,.62) 0%, rgba(41,41,40,.62) 100%); /* gradient overlay */
+      background-image: -o-radial-gradient(center center, 1000px 1000px, rgba(255,255,255,.62) 0%, rgba(41,41,40,.62) 100%); /* gradient overlay */
+      background-image: -webkit-radial-gradient(center center, 1000px 1000px, rgba(255,255,255,.62) 0%, rgba(41,41,40,.62) 100%); /* gradient overlay */
+      background-image: radial-gradient(center center, 1000px 1000px, rgba(255,255,255,.62) 0%, rgba(41,41,40,.62) 100%); /* gradient overlay */
     }
     </style>
     <style>
@@ -128,6 +131,7 @@
     </script>
 
 @endsection
+@section('bc', 'bg')
 
 @section('c')
 
@@ -270,9 +274,9 @@
               <div class="sides">
                 <div class="side active">
                   <div class="ui red card">
-                    <a class="image" href="#" id="btn">
+                    <div class="image" href="#" id="btn">
                       <img src="http://semantic-ui.com/images/avatar/large/steve.jpg">
-                    </a>
+                    </div>
                     <div class="content">
                       <a class="header" href="#">Steve Jobs</a>
                       <div class="meta">
@@ -283,9 +287,9 @@
                 </div>
                 <div class="side">
                   <div class="ui green card">
-                    <a class="image" href="#" id="btn2">
+                    <div class="image" href="#" id="btn2">
                       <img src="http://semantic-ui.com/images/avatar/large/stevie.jpg">
-                    </a>
+                    </div>
                     <div class="content">
                       <a class="header" href="#">Stevie Jobs</a>
                       <div class="meta">

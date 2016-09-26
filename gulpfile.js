@@ -23,7 +23,7 @@ elixir.extend('watchSemantic',watchSemantic);
  */
 
 elixir(mix => {
-    mix.webpack('app.js');
+    mix.browserify('main.js');
     mix.watchSemantic();
 
     // Start New
@@ -37,10 +37,12 @@ elixir(mix => {
 	    .copy('resources/assets/semantic/dist/components/nag.js','public/js/nag.js')
 	    .copy('resources/assets/semantic/dist/components/shape.css','public/css/shape.css')
 	    .copy('resources/assets/semantic/dist/components/shape.js','public/js/shape.js')
+	    .copy('resources/assets/semantic/dist/components/dropdown.css','public/css/dropdown.css')
+	    .copy('resources/assets/semantic/dist/components/dropdown.js','public/js/dropdown.js')
 	    .copy('resources/assets/semantic/dist/components/menu.css','public/css/menu.css')
 	    
 
 	;
-	mix.version(['js/app.js','css/app.css', 'js/jquery.js', 'css/sidebar.css', 'js/sidebar.js', 'css/nag.css', 'js/nag.js', 'css/menu.css', 'css/shape.css', 'js/shape.js']);
+	mix.version(['js/main.js','js/app.js','css/app.css', 'js/jquery.js', 'css/sidebar.css', 'js/sidebar.js', 'css/nag.css', 'js/nag.js', 'css/menu.css', 'css/shape.css', 'js/shape.js','js/dropdown.js','css/dropdown.css']);
     // End New
 });
