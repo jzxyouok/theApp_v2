@@ -20,5 +20,5 @@ Route::get('/signup', function () {
 });
 
 Route::get('/add_store', function () {
-    return view('addstore');
+    return view('store.addstore');
 });
