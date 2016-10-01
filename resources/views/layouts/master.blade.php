@@ -16,6 +16,7 @@
         <link rel="stylesheet" href="{{ elixir('css/menu.css') }}"> 
         <link rel="stylesheet" href="{{ elixir('css/shape.css') }}"> 
         <link rel="stylesheet" href="{{ elixir('css/dropdown.css') }}">
+        <link rel="stylesheet" href="{{ elixir('css/leaflet.css') }}">
         <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/components/icon.min.css'>
         <!-- jQuery to be loaded before everything else !-->
         <script src="{{ elixir('js/jquery.js') }}"></script>
@@ -26,6 +27,8 @@
         <script src="{{ elixir('js/nag.js') }}"></script>
         <script src="{{ elixir('js/shape.js') }}"></script>
         <script src="{{ elixir('js/dropdown.js') }}"></script>
+        <!-- LeafletJS integration for Maps !-->
+        <script src="{{ elixir('js/leaflet.js') }}"></script>
         <!-- D3Js for Charts !-->
         <script src="https://d3js.org/d3.v4.js"></script>
         <!-- Load any more custom CSS / JS in the header !-->
