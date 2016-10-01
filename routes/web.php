@@ -19,6 +19,4 @@ Route::get('/signup', function () {
     return view('auth.signup');
 });
 
-Route::get('/add_store', function () {
-    return view('store.addstore');
-});
+Route::resource('stores', 'StoresController');

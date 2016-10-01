@@ -2,6 +2,12 @@
 
 @section('h')
 <style>
+	body {
+	font-family: "proxima-nova",sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	background-color: #EBEEF0;
+}
      .marginlefting {
 	   margin-left: 60px !important;
 	 }
@@ -20,14 +26,18 @@
 	 	float: left !important;
 	 	margin: 0 !important; 
 	 	margin-right: 10px !important;
+	 	color: #d2d2d2;
+	 	font-size: 16px !important;
 	 }
 
 	 .sidebar-item-icon-collapsed {
 	 	font-size: 24px !important;
+	 	color: #d2d2d2;
 	 }
 
 	 .sidebar-item-name-expanded {
 	 	display: block !important;
+	 	font-size: 16px !important;
 	 }
 
 	 .sidebar-item-name-collapsed {
@@ -37,11 +47,24 @@
 	 .sidebar-item-icon-dropdown-collapsed {
 	 	display: none !important;
 	 }
+	 #map {
+	 	margin-top: 180px;
+	 	height: 100%;
+	 }
+	 .openbtn {
+	 	height: 56.41px !important;
+	 }
+	 .bottom_sticky {
+	 	position: absolute !important; 
+	 	left: 0 !important; 
+	 	bottom: 0 !important;
+	 }
 </style>
 
 <script type="text/javascript">
     $(document).ready(function() { 
     	$(".ui.dropdown").dropdown({on: "hover"});
+    	$('.ui.checkbox').checkbox();
     	$(".openbtn").on("click", function() {
 		    $(".ui.sidebar").toggleClass("very thin icon");
 		    $(".asd").toggleClass("marginlefting");
@@ -49,6 +72,7 @@
 		    $(".sidebar-item-icon").toggleClass("sidebar-item-icon-collapsed").toggleClass("sidebar-item-icon-expanded");
 		    $(".sidebar-item-icon-dropdown").toggleClass("sidebar-item-icon-dropdown-collapsed");
     	});
+
     });
 </script>
 
@@ -58,8 +82,8 @@
 
 @section('c')
 <!-- Body Content -->
-<div class="ui sidebar vertical left menu overlay visible" style="-webkit-transition-duration: 0.5s; overflow: visible !important;">
-  <div class="item logo openbtn">
+<div class="ui sidebar vertical left scrolling inverted menu overlay visible" style="-webkit-transition-duration: 0.5s; overflow: visible !important; background-color:#343536;">
+  <div class="item centered logo openbtn">
       <i class="icon content" style="font-size:24px;"></i>
   </div>
 
@@ -73,11 +97,11 @@
 
   	<div class="ui left pointing dropdown item">
 
-	    <i class="line chart icon sidebar-item-icon sidebar-item-icon-expanded"></i> 
+	    <i class="bar chart icon sidebar-item-icon sidebar-item-icon-expanded"></i> 
 	    <i class="dropdown icon sidebar-item-icon-dropdown"></i>
 	    <span class="sidebar-item-name sidebar-item-name-expanded">Reports</span>
 
-	    <div class="menu">
+	    <div class="menu" style="background-color: #eee;">
 	      <a href="#" class="item">Billing History</a>
 	      <a href="#" class="item">KOT Void History</a>
 	      <a href="#" class="item">Register Closures</a>
@@ -93,11 +117,11 @@
 
 	<div class="ui left pointing dropdown item">
 
-	    <i class="cube icon sidebar-item-icon sidebar-item-icon-expanded"></i> 
+	    <i class="tag icon sidebar-item-icon sidebar-item-icon-expanded" style="color:#798c9c"></i> 
 	    <i class="dropdown icon sidebar-item-icon-dropdown"></i>
 	    <span class="sidebar-item-name sidebar-item-name-expanded">Products</span>
 
-	    <div class="menu">
+	    <div class="menu" style="background-color: #f2f2f2;">
 	      <a href="#" class="item">Products</a>
 	      <a href="#" class="item">Product Modifiers</a>
 	      <a href="#" class="item">StockControl</a>
@@ -111,11 +135,11 @@
 
 	<div class="ui left pointing dropdown item">
 
-	    <i class="user icon sidebar-item-icon sidebar-item-icon-expanded"></i> 
+	    <i class="users icon sidebar-item-icon sidebar-item-icon-expanded"></i> 
 	    <i class="dropdown icon sidebar-item-icon-dropdown"></i>
 	    <span class="sidebar-item-name sidebar-item-name-expanded">Customers</span>
 
-	    <div class="menu">
+	    <div class="menu" style="background-color: #f2f2f2;">
 	      <a href="#" class="item">Customers</a>
 	      <a href="#" class="item">Customer Groups</a>
 	    </div>
@@ -127,7 +151,7 @@
 	    <i class="dropdown icon sidebar-item-icon-dropdown"></i>
 	    <span class="sidebar-item-name sidebar-item-name-expanded">Settings</span>
 
-	    <div class="menu">
+	    <div class="menu" style="background-color: #f2f2f2;">
 	      <a href="#" class="item">Stores &amp; Registers</a>
 	      <a href="#" class="item">Payments &amp; Taxes</a>
 	      <a href="#" class="item">Employees &amp; Permissions</a>
@@ -138,13 +162,13 @@
 	    </div>
 	</div>
 
-	<div class="ui left pointing dropdown item">
+	<div class="ui dropdown item bottom_sticky">
 
 	    <i class="user icon sidebar-item-icon sidebar-item-icon-expanded"></i> 
 	    <i class="dropdown icon sidebar-item-icon-dropdown"></i>
 	    <span class="sidebar-item-name sidebar-item-name-expanded">User</span>
 
-	    <div class="menu">
+	    <div class="menu" style="background-color: #f2f2f2;">
 	      <a href="#" class="item">My Profile</a>
 	      <a href="#" class="item">Logout</a>
 	    </div>
@@ -152,20 +176,19 @@
 
 </div>
 
-<div class="pusher">
+<div class="pusher asd" style="margin-left: 208px; -webkit-transition-duration: 0.1s; background-color: #f5f5f5">
   <!-- Top Menu !-->
-  <div class="ui menu asd borderless" style="border-radius: 0!important; border: 0; margin-left: 208px; -webkit-transition-duration: 0.1s;">
+  <div class="ui menu borderless" style="border-radius: 0!important; border: 0;">
     <!--<a class="item">Messages</a>-->
     <!-- Breadcrumb in Menu -->
-    <div class="ui item breadcrumb">
-	  <a class="section">Home</a>
-	  <i class="right angle icon divider"></i>
+    <div class="ui item big breadcrumb">
+	  <a class="section"><i class="setting grey icon"></i>Settings</a>
+	  <i class="divider"> /  </i>
 	  <a class="section">Stores &amp; Registers</a>
-	  <i class="right angle icon divider"></i>
+	  <i class="divider"> /  </i>
 	  <div class="active section">Add New Store</div>
 	</div>
 	<!-- End of Breadcrumb -->
-
     <div class="right menu">
       <div class="item">
         <a class="ui primary button">Save</a>
@@ -173,22 +196,68 @@
       <div class="item">
         <a class="ui button">Discard</a>
       </div>
-
     </div>
   </div>
   <!-- End of Top Menu !-->
 
   <!-- Actual Body Content with Cards !-->
 
-  <div class="ui container">
+  <div class="ui container" style="padding-left:10px; padding-right:10px;">
   <!--Form Begins -->
-  <form class="ui big form asd borderless" style="border-radius: 0!important; border: 0; margin-left: 208px; -webkit-transition-duration: 0.1s;">
+  <form class="ui form">
+  	<!-- Segment Example !-->
+  	<!--<div class="ui raised segments">
+	  <div class="ui segment">
+	    <h5 class="header"><i class="icon shop"></i> Store Details</h5>
+	  </div>
+	  <div class="ui segment">
+            <div class="field">
+              <label>Full Name</label>
+              <div class="field">
+                <div class="sixteen wide field">
+                  <input type="text" name="full_name" placeholder="Full Name">
+                </div>
+              </div>
+            </div>
+
+            <div class="field">
+              <label>Description</label>
+              <div class="field">
+                <div class="sixteen wide field">
+                  <textarea type="textarea" name="description" placeholder="Description" rows="3"></textarea>
+                </div>
+              </div>
+            </div>
+
+            <div class="field">
+              <label>Tax</label>
+              <div class="field">
+                <div class="sixteen wide field">
+                  <input type="text" name="tax" placeholder="Tax">
+                </div>
+              </div>
+            </div>
+
+            <div class="two fields">
+              <div class="field">
+                <label>Mobile Number</label>
+                <input type="tel" name="mobile_no" placeholder="Mobile Number">
+              </div>
+              <div class="field">
+                <label>Email Address</label>
+                <input type="email" name="email" placeholder="Email Address">
+              </div>
+            </div> 
+	  </div>
+	</div>-->
+
     <!-- Cards Main Container !-->
-    <div class="ui cards">
+    <div class="ui cards stackable grid">
       
       <!-- Card 1 !-->
-      <div class="ui fluid blue card">        
-          <div class="extra content" style="background:#ccc">
+  	 <div class="eight wide column">
+      <div class="ui fluid card">        
+          <div class="extra content" style="background:#eee">
             <span class="header"><i class="icon shop"></i> Store Details</span>
           </div>
         <div class="content">
@@ -235,13 +304,11 @@
           </div>
         </div>
       </div>
-    </div>
-
-    <!-- Card 2 !-->
-    <div class="ui cards">
-
-      <div class="ui fluid orange card">        
-          <div class="extra content" style="background:#ccc">
+   	 </div>
+   	 <!-- Card 2 !-->
+   	 <div class="eight wide column">
+   	 	<div class="ui fluid card">        
+          <div class="extra content" style="background:#eee">
             <span class="header"><i class="icon map"></i> Store Address</span>
           </div>
         <div class="content">
@@ -543,16 +610,23 @@
                   </div>
                 </div>
             </div>
-          <!-- Form Content Ends -->
           </div>
-        </div>
-      </div>
+         </div>
+   	  </div>
     </div>
 
-    <!-- Card 3 !-->
-    <div class="ui cards">
-      <div class="ui fluid red card">        
-          <div class="extra content" style="background:#ccc">
+
+
+    </div>
+
+    <!-- Cards 3 & 4 !-->
+    <div class="ui cards stackable grid">
+     <!-- Grid system for 2 cards in 1 page; 
+     	  The stackable grid makes sure that the grid items are below each other when responsive !-->
+     <div class="ten wide column">
+     <!-- Card 3 !-->
+      <div class="ui fluid card">        
+          <div class="extra content" style="background:#eee">
             <span class="header"><i class="icon setting"></i> Store Settings</span>
           </div>
         <div class="content">
@@ -676,16 +750,20 @@
             <div class="field">
               <label>Maps</label>
                 <div id="map"></div>
-                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZlTGim-J1tXxaa6E3F9YfLEtNPBnK9Ng&callback=initMap"></script>
-                  <script>
-                      var map;
-                      function initMap() {
-                        map = new google.maps.Map(document.getElementById('map'), {
-                          center: {lat: -34.397, lng: 150.644},
-                          zoom: 8
-                        });
-                      }
-                  </script>
+                <script>
+
+				  // initialize the map
+				  var map = L.map('map').setView([42.35, -71.08], 13);
+
+				  // load a tile layer
+				  L.tileLayer('http://tiles.mapc.org/basemap/{z}/{x}/{y}.png',
+				    {
+				      attribution: 'Tiles by <a href="http://mapc.org">MAPC</a>, Data by <a href="http://mass.gov/mgis">MassGIS</a>',
+				      maxZoom: 17,
+				      minZoom: 9
+				    }).addTo(map);
+
+				</script>
             </div>
 
             <div class="inline field">
@@ -694,31 +772,29 @@
                 <label>Status (Enable or Disable the Store)</label>
               </div>
             </div>
-
-            <!-- Form Content Ends -->
           </div>
         </div>
+       </div>
       </div>
-    </div>
-
-    <!-- Card 4 !-->
-    <div class="ui cards">
-      <div class="ui fluid green card">        
-          <div class="extra content" style="background:#ccc">
-            <span class="header"><i class="icon options"></i> Advance Settings</span>
-          </div>
-        <div class="content">
-          <div class="header">Metadata</div>
-          <div class="description">
-            <div class="field">
-              <label>Enter Valid JSON data. (Optional)</label>
-                <div class="sixteen wide field">
-                  <textarea type="textarea" name="description" placeholder="Description" rows="3"></textarea>
-                </div>
-            </div>
-          </div>
-        </div>
-      </div>
+       <!-- Card 4 !-->
+      	<div class="six wide column">
+	      <div class="ui fluid card">        
+	          <div class="extra content" style="background:#eee">
+	            <span class="header"><i class="icon options"></i> Advance Settings</span>
+	          </div>
+	        <div class="content">
+	          <div class="header">Metadata</div>
+	          <div class="description">
+	            <div class="field">
+	              <label>Enter Valid JSON data. (Optional)</label>
+	                <div class="sixteen wide field">
+	                  <textarea type="textarea" name="description" placeholder="Description" rows="3"></textarea>
+	                </div>
+	            </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>
     </div>
 
   <!--Form Ends -->
@@ -737,8 +813,6 @@
 	</div>
   <!--Container Tag Div !-->
   </div>
-
-
 
 </div>
 <!-- End Body Content -->
