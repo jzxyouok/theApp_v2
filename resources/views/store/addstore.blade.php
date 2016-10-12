@@ -679,7 +679,7 @@
 
         <div class="field">
           <label>Maps</label>
-            <div id="map">
+            <div id="map" style="z-index:0;">
               <script>
                 var mymap = L.map('map').setView([51.505, -0.09], 13);
 
