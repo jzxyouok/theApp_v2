@@ -2,12 +2,9 @@
 
 @section('h')
 <style>
-	body {
-	font-family: "proxima-nova",sans-serif;
-	font-style: normal;
-	font-weight: 400;
-	background-color: #EBEEF0;
-}
+    * {
+      font-family: "proxima-nova", sans-serif;
+    }
      .marginlefting {
 	   margin-left: 60px !important;
 	 }
@@ -177,66 +174,72 @@
 </div>
 
 <div class="pusher asd" style="margin-left: 208px; -webkit-transition-duration: 0.1s; background-color: #f5f5f5">
+  <!-- Top Menu Bar -->
   <div class="ui clearing segment">
-    <div class="ui item big breadcrumb">
+    <div class="ui item big breadcrumb" style="margin:0 auto;">
       <a class="section"><i class="setting grey icon"></i>Settings</a>
       <i class="divider"> /  </i>
       <a class="section">Stores &amp; Registers</a>
       <i class="divider"> /  </i>
       <div class="active section">Add New Store</div>
     </div>
-        <a class="ui primary right floated button">Save</a>
         <a class="ui right floated button">Discard</a>
+        <a class="ui primary right floated button">Save</a>
   </div>
+  <!-- End of Top Menu Bar -->
 
   <!-- Actual Body Content with Cards !-->
-
   <div class="ui container" style="padding-left:10px; padding-right:10px;">
   <!--Form Begins -->
   <form class="ui form">
   	<!-- Segments 1 & 2 !-->
   	<div class="ui stackable grid">
 
-     <div class="eight wide column">
-      <h5 class="ui top attached header"><i class="icon shop"></i> Store Details</h5>
+      <div class="six wide column">
+        <div class="ui basic padded segment">
+          <h3 class="ui header"><i class="icon shop"></i> Store Details</h3>
+          <span style="font-size:18px; line-height:23px;">Shoptree and your customers will use this information to contact you.</span>
+        </div>
+      </div>
+
+     <div class="ten wide column">
      <!-- Segment 1 - Card 1 !-->
-  	  <div class="ui bottom attached segment">
-
+  	  <div class="ui padded segment">
         <div class="field">
-          <label>Full Name</label>
+          <span>Full Name</span>
           <div class="field">
             <div class="sixteen wide field">
-              <input type="text" name="full_name" placeholder="Full Name">
+              <input type="text" name="full_name">
             </div>
           </div>
         </div>
 
         <div class="field">
-          <label>Description</label>
+          <span>Description</span>
           <div class="field">
             <div class="sixteen wide field">
-              <textarea type="textarea" name="description" placeholder="Description" rows="3"></textarea>
+              <textarea type="textarea" name="description" rows="3"></textarea>
             </div>
           </div>
         </div>
 
         <div class="field">
-          <label>Tax</label>
+          <span>Tax</span>
           <div class="field">
             <div class="sixteen wide field">
-              <input type="text" name="tax" placeholder="Tax">
+              <input type="text" name="tax">
             </div>
           </div>
         </div>
 
         <div class="two fields">
           <div class="field">
-            <label>Mobile Number</label>
-            <input type="tel" name="mobile_no" placeholder="Mobile Number">
+            <span>Mobile Number</span>
+            <input type="tel" name="mobile_no" >
           </div>
           <div class="field">
-            <label>Email Address</label>
-            <input type="email" name="email" placeholder="Email Address">
+            <span>Email Address</span>
+            <input type="email" name="email">
           </div>
         </div>
       <!-- segment ends !-->
@@ -244,50 +247,61 @@
      <!-- 8 wide column ends !--> 
      </div>
 
-     <!-- 8 wide column of same stackable grid !-->
-     <div class="eight wide column">
-      <h5 class="ui top attached header"><i class="icon map"></i> Store Address</h5>
+    <!-- End of stackable grid !-->
+    </div>
+  <div class="ui divider"></div>
+
+    <div class="ui stackable grid">
+      
+      <div class="six wide column">
+        <div class="ui basic padded segment">
+          <h3 class="ui header"><i class="icon map"></i> Store Address</h3>
+          <span style="font-size:18px; line-height:24px;">This address will appear on your invoices. You can edit the address used to calculate shipping rates in your shipping settings.</span>
+        </div>
+      </div>
+      <!-- 8 wide column of same stackable grid !-->
+     <div class="ten wide column">
       <!-- Segment 2 - Card 2 -->
-      <div class="ui bottom attached segment">
+      <div class="ui padded segment">
 
         <div class="two fields">
           <div class="field">
-            <label>Street 1</label>
-            <input type="text" name="street_1" placeholder="Street 1">
+            <span>Street 1</span>
+            <input type="text" name="street_1">
           </div>
           <div class="field">
-            <label>Street 2</label>
-            <input type="text" name="street_2" placeholder="Street 2">
+            <span>Street 2</span>
+            <input type="text" name="street_2">
           </div>
         </div>
 
         <div class="field">
-          <label>Locality</label>
+          <span>Locality</span>
           <div class="field">
             <div class="sixteen wide field">
-              <input type="text" name="locality" placeholder="Locality">
+              <input type="text" name="locality">
             </div>
           </div>
         </div>
 
         <div class="two fields">
           <div class="field">
-            <label>City</label>
-            <input type="text" name="city" placeholder="City">
+            <span>City</span>
+            <input type="text" name="city">
           </div>
           <div class="field">
-            <label>ZIP</label>
-            <input type="text" name="zip_code" placeholder="ZIP Code">
+            <span>ZIP</span>
+            <input type="text" name="zip_code">
           </div>
         </div>
 
         <div class="two fields">
           <div class="field">
-            <label>State</label>
-            <input type="text" name="state" placeholder="State">
+            <span>State</span>
+            <input type="text" name="state">
           </div>
           <div class="field">
-          <label>Country</label>
+          <span>Country</span>
             <div class="ui selection dropdown">
               <input type="hidden" name="country">
               <i class="dropdown icon"></i>
@@ -549,26 +563,31 @@
       </div>
      </div>
 
-    <!-- End of stackable grid !-->
     </div>
-
+  <div class="ui divider"></div>
     <!-- Segments 3 & 4 !-->
     <div class="ui stackable grid">
+
+      <div class="six wide column">
+        <div class="ui basic padded segment">
+          <h3 class="ui header"><i class="icon setting"></i> Store Settings</h3>
+          <span style="font-size:18px; line-height:23px;">This address will appear on your invoices. You can edit the address used to calculate shipping rates in your shipping settings.</span>
+        </div>
+      </div>
      
      <!-- Grid system for 2 cards in 1 page; 
      	  The stackable grid makes sure that the grid items are below each other when responsive !-->
      <div class="ten wide column">
-     <h5 class="ui top attached header"><i class="icon setting"></i> Store Settings</h5>
      <!-- Segment 3 - Card 3 !-->
-      <div class="ui bottom attached segment">
+      <div class="ui padded segment">
         <!-- Form Content Starts -->
         <div class="two fields">
           <div class="field">
-            <label>Currency</label>
-            <input type="text" name="currency" placeholder="Currency">
+            <span>Currency</span>
+            <input type="text" name="currency">
           </div>
           <div class="field">
-            <label>Round Off</label>
+            <span>Round Off</span>
             <div class="ui selection dropdown">
               <input type="hidden" name="round_off">
               <i class="dropdown icon"></i>
@@ -585,7 +604,7 @@
         </div>
 
         <div class="field">
-          <label>Timezone</label>
+          <span>Timezone</span>
           <div class="ui selection dropdown">
           <input type="hidden" name="timezone">
             <i class="dropdown icon"></i>
@@ -678,7 +697,7 @@
         </div>
 
         <div class="field">
-          <label>Maps</label>
+          <span>Maps</span>
             <div id="map" style="z-index:0;">
               <script>
                 var mymap = L.map('map').setView([51.505, -0.09], 13);
@@ -692,19 +711,7 @@
                 }).addTo(mymap);
 
                 L.marker([51.5, -0.09]).addTo(mymap)
-                  .bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
-
-                L.circle([51.508, -0.11], 500, {
-                  color: 'red',
-                  fillColor: '#f03',
-                  fillOpacity: 0.5
-                }).addTo(mymap).bindPopup("I am a circle.");
-
-                L.polygon([
-                  [51.509, -0.08],
-                  [51.503, -0.06],
-                  [51.51, -0.047]
-                ]).addTo(mymap).bindPopup("I am a polygon.");
+                  .bindPopup("<b>Yo!</b><br />Is this your store?").openPopup();
 
 
                 var popup = L.popup();
@@ -725,28 +732,37 @@
         <div class="inline field">
           <div class="ui toggle checkbox">
             <input type="checkbox" tabindex="0" class="hidden">
-            <label>Status (Enable or Disable the Store)</label>
+            <span>Status (Enable or Disable the Store)</span>
           </div>
         </div>
       </div>
      </div>
-       <!-- Card 4 !-->
-     <div class="six wide column">
-       <h5 class="ui top attached header"><i class="icon options"></i> Advance Settings</h5>
-	     <div class="ui bottom attached segment">
-	        <div class="content">
-	          <div class="header">Metadata</div>
-	          <div class="description">
-	            <div class="field">
-	              <label>Enter Valid JSON data. (Optional)</label>
-	                <div class="sixteen wide field">
-	                  <textarea type="textarea" name="description" placeholder="Description" rows="5"></textarea>
-	                </div>
-	            </div>
-	          </div>
-	        </div>
-	      </div>
-	    </div>
+    </div>
+  <div class="ui divider"></div>
+    <div class="ui stackable grid">
+
+    <div class="six wide column">
+      <div class="ui basic padded segment">
+        <h3 class="ui header"><i class="icon options"></i> Advance Settings</h3>
+        <span style="font-size:18px; line-height:23px;">Add Metadata in form of JSON.</span>
+      </div>
+    </div>
+
+     <div class="ten wide column">
+       <div class="ui padded segment">
+          <div class="content">
+            <div class="description">
+              <div class="field">
+                <span>Enter Valid JSON data. (Optional)</span>
+                  <div class="sixteen wide field">
+                    <textarea type="textarea" name="description" rows="5"></textarea>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
 
   <!--Form Ends -->
