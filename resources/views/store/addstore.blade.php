@@ -177,28 +177,17 @@
 </div>
 
 <div class="pusher asd" style="margin-left: 208px; -webkit-transition-duration: 0.1s; background-color: #f5f5f5">
-  <!-- Top Menu !-->
-  <div class="ui menu borderless" style="border-radius: 0!important; border: 0;">
-    <!--<a class="item">Messages</a>-->
-    <!-- Breadcrumb in Menu -->
+  <div class="ui clearing segment">
     <div class="ui item big breadcrumb">
-	  <a class="section"><i class="setting grey icon"></i>Settings</a>
-	  <i class="divider"> /  </i>
-	  <a class="section">Stores &amp; Registers</a>
-	  <i class="divider"> /  </i>
-	  <div class="active section">Add New Store</div>
-	</div>
-	<!-- End of Breadcrumb -->
-    <div class="right menu">
-      <div class="item">
-        <a class="ui primary button">Save</a>
-      </div>
-      <div class="item">
-        <a class="ui button">Discard</a>
-      </div>
+      <a class="section"><i class="setting grey icon"></i>Settings</a>
+      <i class="divider"> /  </i>
+      <a class="section">Stores &amp; Registers</a>
+      <i class="divider"> /  </i>
+      <div class="active section">Add New Store</div>
     </div>
+        <a class="ui primary right floated button">Save</a>
+        <a class="ui right floated button">Discard</a>
   </div>
-  <!-- End of Top Menu !-->
 
   <!-- Actual Body Content with Cards !-->
 
