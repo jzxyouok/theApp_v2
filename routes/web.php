@@ -20,3 +20,7 @@ Route::get('/signup', function () {
 });
 
 Route::resource('stores', 'StoresController');
+
+Route::get('/store/add', function () {
+    return view('addstore');
+});
