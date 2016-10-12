@@ -207,6 +207,7 @@
   <form class="ui form">
     <div class="ui vertical padded segment">
       <h5 class="header"><i class="icon shop"></i> Store Details</h5>
+      <div class="ui divider"></div>
      <!-- Segment 1 - Card 1 !-->
       <div class="ui bottom attached">
 
@@ -557,6 +558,7 @@
     </div>
     <div class="ui vertical padded segment">
       <h5 class="ui header"><i class="icon setting"></i> Store Settings</h5>
+      <div class="ui divider"></div>
      <!-- Segment 3 - Card 3 !-->
       <div class="ui bottom attached">
         <!-- Form Content Starts -->
@@ -690,6 +692,7 @@
     </div>
     <div class="ui vertical padded segment">
      <h5 class="ui header"><i class="icon options"></i> Advance Settings</h5>
+     <div class="ui divider"></div>
      <div class="ui bottom attached">
         <div class="content">
           <div class="header">Metadata</div>
