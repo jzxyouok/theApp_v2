@@ -44,6 +44,10 @@
 	 .sidebar-item-icon-dropdown-collapsed {
 	 	display: none !important;
 	 }
+	 #map {
+	 	padding-top: 180px;
+	 	height: 100%;
+	 }
 	 .openbtn {
 	 	height: 56.41px !important;
 	 }
@@ -59,13 +63,7 @@
     bottom: 0 !important;
     width: 60.31px;
    }
-
-   #map {
-    padding-top: 180px;
-    height: 100%;
-   }
-
-   #expected .ui.left.pointing.dropdown > .menu:after {
+   #expected .ui.vertical.menu .dropdown.item:not(.upward) .menu {
     background-color: #f2f2f2 !important;
    }
 </style>
@@ -94,13 +92,13 @@
 
 <div class="pusher asd" style="margin-left: 208px; -webkit-transition-duration: 0.1s; background-color: #f5f5f5">
   <!-- Top Menu Bar -->
-  <div class="ui clearing padded segment">
+  <div class="ui clearing segment">
     <div class="ui item big breadcrumb" style="margin-top:8px;">
       <a class="section"><i class="setting grey icon"></i>Settings</a>
       <i class="divider"> /  </i>
-      <a class="section">Stores</a>
+      <a class="section">Registers</a>
       <i class="divider"> /  </i>
-      <div class="active section">Add New Store</div>
+      <div class="active section">Add New Register</div>
     </div>
         <a class="ui right floated button">Discard</a>
         <a class="ui primary right floated button">Save</a>
@@ -116,7 +114,7 @@
 
       <div class="six wide column">
         <div class="ui basic padded segment">
-          <h3 class="ui header"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M9.939 0l-.939 4.971v1.098c0 1.066-.934 1.931-2 1.931s-2-.865-2-1.932v-1.097l2.996-4.971h1.943zm-3.052 0l-2.887 4.971v1.098c0 1.066-.934 1.931-2 1.931s-2-.865-2-1.932v-1.097l4.873-4.971h2.014zm17.113 6.068c0 1.067-.934 1.932-2 1.932s-2-.933-2-2v-1.098l-2.887-4.902h2.014l4.873 4.971v1.097zm-10-1.168v1.098c0 1.066-.934 2.002-2 2.002s-2-.933-2-2v-1.098l1.047-4.902h1.906l1.047 4.9zm2.004-4.9l2.994 5.002v1.098c0 1.067-.932 1.9-1.998 1.9s-2-.933-2-2v-1.098l-.939-4.902h1.943zm4.996 12v7h-18v-7h18zm2-2h-22v14h22v-14zm-18.5 5.836c-.128 0-.256-.049-.354-.146-.195-.195-.195-.512 0-.707l1.836-1.836c.195-.195.512-.195.707 0s.195.512 0 .707l-1.836 1.836c-.097.097-.225.146-.353.146zm.518 2.018l4.01-4.01c.195-.195.195-.512 0-.707s-.512-.195-.707 0l-4.01 4.01c-.195.195-.195.512 0 .707.097.097.225.146.353.146s.256-.049.354-.146z"/></svg>&nbsp; &nbsp;  Store Details</h3>
+          <h3 class="ui header"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10.81 11.885h-1.098l.066-.739h1.069l-.037.739zm.613 1.099h1.14l-.007-.739h-1.111l-.022.739zm.085-2.971l-.021.739h1.054l-.007-.739h-1.026zm-1.894 2.971h1.14l.038-.739h-1.112l-.066.739zm1.291-2.971h-1.026l-.066.739h1.054l.038-.739zm6.308 0l.137.739h1.054l-.165-.739h-1.026zm-4.115 0l.023.739h1.054l-.051-.739h-1.026zm1.155 1.872l-.051-.739h-1.069l.022.739h1.098zm3.309-4.885h-7.406l-.204 2h8.058l-.448-2zm-6.107 4.885h1.097l-.007-.739h-1.069l-.021.739zm2.874 1.099l-.051-.739h-1.111l.023.739h1.139zm-5.888-2.971h-1.025l-.134.739h1.054l.105-.739zm10.215 1.872l-.165-.739h-1.069l.136.739h1.098zm-12.074-.739h-1.069l-.179.739h1.097l.151-.739zm.231-1.133h-1.026l-.179.739h1.054l.151-.739zm17.187 4.987v7h-24v-7h24zm-2 2h-20v3h20v-3zm-9 1h-2v1h2v-1zm-7.932-5.016h1.14l.15-.739h-1.111l-.179.739zm11.702-2.233l-.121-.739h-1.026l.093.739h1.054zm.185 1.134l-.121-.739h-1.069l.093.739h1.097zm1.946 1.099l-.165-.739h-2.833l.093.739h2.905zm-10.622-1.838h-1.069l-.134.739h1.098l.105-.739zm-1.402 1.838h1.139l.105-.739h-1.11l-.134.739zm-5.595.016l2.621-9h1.921c.112-.622.322-1.371.668-2h3.427c-.26.57-.499 1.259-.627 2h10.805l2.592 9h-2.221l-1.804-7h-9.42c.071.836.178 1.511-.107 2h-3.456c.292-.431.166-1.111.086-2h-.481l-1.739 7h-2.265zm5.101-6.631h2.298c-.157-1.076-.092-2.782.404-3.786h-2.249c-.553 1.006-.624 2.64-.453 3.786z"/></svg>&nbsp; &nbsp;  Register Details</h3>
           <span style="font-size:18px; line-height:23px;">Shoptree and your customers will use this information to contact you.</span>
         </div>
       </div>
@@ -128,37 +126,90 @@
           <span>Name</span>
           <div class="field">
             <div class="sixteen wide field">
-              <input type="text" name="store_name">
+              <input type="text" name="register_name">
             </div>
           </div>
         </div>
 
         <div class="field">
-          <span>Description</span>
-          <div class="field">
-            <div class="sixteen wide field">
-              <textarea type="textarea" name="description" rows="3"></textarea>
-            </div>
-          </div>
+          <span>For Store</span>
+        	<div class="ui selection dropdown">
+              <input type="hidden" name="store">
+              <i class="dropdown icon"></i>
+              <div class="default text">Select Store...</div>
+                <div class="menu">
+                  <div class="item" value="1">Kormangala</div>
+                  <div class="item" value="2">Store 2</div>
+                  <div class="item" value="3">Indira Nagar</div>
+                </div>
+        	</div>
         </div>
 
         <div class="field">
-          <span>Tax Number</span>
-          <div class="field">
-            <div class="sixteen wide field">
-              <input type="text" name="tax">
-            </div>
-          </div>
+          <span>Default Sale Type</span>
+        	<div class="ui selection dropdown">
+              <input type="hidden" name="sale_type">
+              <i class="dropdown icon"></i>
+              <div class="default text">Select</div>
+                <div class="menu">
+                  <div class="item" value="1">Walk In</div>
+                  <div class="item" value="2">Dine In</div>
+                  <div class="item" value="3">Take Away</div>
+                  <div class="item" value="4">Home Delivery</div>
+                </div>
+        	</div>
+        </div>
+        
+        <div class="field">
+          <span>Allowed Sale Mode</span>
+          <div class="inline fields">
+		    <div class="field">
+		      <div class="ui radio checkbox">
+		        <input type="radio" name="sale_mode" checked="" tabindex="0" class="hidden">
+		        <label>Walk In</label>
+		      </div>
+		    </div>
+		    <div class="field">
+		      <div class="ui radio checkbox">
+		        <input type="radio" name="sale_mode" tabindex="0" class="hidden">
+		        <label>Dine In</label>
+		      </div>
+		    </div>
+		    <div class="field">
+		      <div class="ui radio checkbox">
+		        <input type="radio" name="sale_mode" tabindex="0" class="hidden">
+		        <label>Walk In + Dine In</label>
+		      </div>
+		    </div>
+		  </div>
+        </div>
+
+        <div class="field">
+          <span>Payment Settlement</span>
+          <div class="inline fields">
+		    <div class="field">
+		      <div class="ui radio checkbox">
+		        <input type="radio" name="settlement" checked="" tabindex="0" class="hidden">
+		        <label>Local</label>
+		      </div>
+		    </div>
+		    <div class="field">
+		      <div class="ui radio checkbox">
+		        <input type="radio" name="settlement" tabindex="0" class="hidden">
+		        <label>Remote</label>
+		      </div>
+		    </div>
+		  </div>
         </div>
 
         <div class="two fields">
           <div class="field">
-            <span>Mobile Number</span>
-            <input type="tel" name="mobile_no" >
+            <span>Register Rules</span>
+            <input type="text" name="reg_rules">
           </div>
           <div class="field">
-            <span>Email Address</span>
-            <input type="email" name="email">
+            <span>Register Templates</span>
+            <input type="text" name="reg_templates">
           </div>
         </div>
       <!-- segment ends !-->
@@ -672,7 +723,6 @@
                   <div class="item" data-value="1.00">1.00</div>
               </div>
             </div>
-            <span>Based on Swedish rounding Rules more info here</span>
          </div>
         </div>
 
@@ -772,7 +822,7 @@
         <div class="inline field">
           <div class="ui toggle checkbox">
             <input type="checkbox" tabindex="0" class="hidden">
-            <span>Status (Enable or Disable the Store)</span>
+            <span>Status (Choose whether the Register should be available or not.)</span>
           </div>
         </div>
       </div>

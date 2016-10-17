@@ -21,6 +21,8 @@ Route::get('/signup', function () {
 
 Route::resource('stores', 'StoresController');
 
+Route::resource('registers', 'RegistersController');
+
 Route::get('/store/add', function () {
     return view('addstore');
 });
