@@ -1,7 +1,5 @@
 /*******************************
      User Global Variables
 *******************************/
-@fontSize : 15px;
 @fontName : 'proxima-nova';
 @importGoogleFonts : false;
-
