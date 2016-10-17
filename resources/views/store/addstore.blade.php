@@ -175,8 +175,8 @@
 
 <div class="pusher asd" style="margin-left: 208px; -webkit-transition-duration: 0.1s; background-color: #f5f5f5">
   <!-- Top Menu Bar -->
-  <div class="ui clearing segment">
-    <div class="ui item big breadcrumb" style="margin:0 auto;">
+  <div class="ui clearing padded segment">
+    <div class="ui item big breadcrumb" style="margin-top:8px;">
       <a class="section"><i class="setting grey icon"></i>Settings</a>
       <i class="divider"> /  </i>
       <a class="section">Stores &amp; Registers</a>
@@ -197,7 +197,7 @@
 
       <div class="six wide column">
         <div class="ui basic padded segment">
-          <h3 class="ui header"><i class="icon shop"></i> Store Details</h3>
+          <h3 class="ui header"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M9.939 0l-.939 4.971v1.098c0 1.066-.934 1.931-2 1.931s-2-.865-2-1.932v-1.097l2.996-4.971h1.943zm-3.052 0l-2.887 4.971v1.098c0 1.066-.934 1.931-2 1.931s-2-.865-2-1.932v-1.097l4.873-4.971h2.014zm17.113 6.068c0 1.067-.934 1.932-2 1.932s-2-.933-2-2v-1.098l-2.887-4.902h2.014l4.873 4.971v1.097zm-10-1.168v1.098c0 1.066-.934 2.002-2 2.002s-2-.933-2-2v-1.098l1.047-4.902h1.906l1.047 4.9zm2.004-4.9l2.994 5.002v1.098c0 1.067-.932 1.9-1.998 1.9s-2-.933-2-2v-1.098l-.939-4.902h1.943zm4.996 12v7h-18v-7h18zm2-2h-22v14h22v-14zm-18.5 5.836c-.128 0-.256-.049-.354-.146-.195-.195-.195-.512 0-.707l1.836-1.836c.195-.195.512-.195.707 0s.195.512 0 .707l-1.836 1.836c-.097.097-.225.146-.353.146zm.518 2.018l4.01-4.01c.195-.195.195-.512 0-.707s-.512-.195-.707 0l-4.01 4.01c-.195.195-.195.512 0 .707.097.097.225.146.353.146s.256-.049.354-.146z"/></svg>&nbsp; &nbsp;  Store Details</h3>
           <span style="font-size:18px; line-height:23px;">Shoptree and your customers will use this information to contact you.</span>
         </div>
       </div>
@@ -206,10 +206,10 @@
      <!-- Segment 1 - Card 1 !-->
   	  <div class="ui padded segment">
         <div class="field">
-          <span>Full Name</span>
+          <span>Name</span>
           <div class="field">
             <div class="sixteen wide field">
-              <input type="text" name="full_name">
+              <input type="text" name="store_name">
             </div>
           </div>
         </div>
@@ -224,7 +224,7 @@
         </div>
 
         <div class="field">
-          <span>Tax</span>
+          <span>Tax Number</span>
           <div class="field">
             <div class="sixteen wide field">
               <input type="text" name="tax">
@@ -560,6 +560,38 @@
             </div>
           </div>
         </div> 
+
+        <div class="field">
+          <span>Maps</span>
+            <div id="map" style="z-index:0;">
+              <script>
+                var mymap = L.map('map').setView([51.505, -0.09], 13);
+
+                L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpandmbXliNDBjZWd2M2x6bDk3c2ZtOTkifQ._QA7i5Mpkd_m30IGElHziw', {
+                  maxZoom: 18,
+                  attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+                    '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+                    'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+                  id: 'mapbox.streets'
+                }).addTo(mymap);
+
+                L.marker([51.5, -0.09]).addTo(mymap)
+                  .bindPopup("<b>Yo!</b><br />Is this your store?").openPopup();
+
+                var popup = L.popup();
+
+                function onMapClick(e) {
+                  popup
+                    .setLatLng(e.latlng)
+                    .setContent("You clicked the map at " + e.latlng.toString())
+                    .openOn(mymap);
+                }
+
+                mymap.on('click', onMapClick);
+
+              </script>
+            </div>
+        </div>
       </div>
      </div>
 
@@ -582,10 +614,131 @@
       <div class="ui padded segment">
         <!-- Form Content Starts -->
         <div class="two fields">
-          <div class="field">
-            <span>Currency</span>
-            <input type="text" name="currency">
+         <div class="field">
+          <span>Currency</span>
+          <div class="ui selection dropdown">
+          <input type="hidden" name="currency">
+            <i class="dropdown icon"></i>
+            <div class="default text">Select</div>
+            <div class="menu" name="store-add-currency">
+              <div class="item" value="ALL">Albania Lek (Lek)</div>
+              <div class="item" value="AFN">Afghanistan Afghani (؋)</div>
+              <div class="item" value="ARS">Argentina Peso ($)</div>
+              <div class="item" value="AWG">Aruba Guilder (ƒ)</div>
+              <div class="item" value="AUD">Australia Dollar ($)</div>
+              <div class="item" value="AZN">Azerbaijan New Manat (ман)</div>
+              <div class="item" value="BSD">Bahamas Dollar ($)</div>
+              <div class="item" value="BBD">Barbados Dollar ($)</div>
+              <div class="item" value="BYR">Belarus Ruble (p.)</div>
+              <div class="item" value="BZD">Belize Dollar (BZ$)</div>
+              <div class="item" value="BMD">Bermuda Dollar ($)</div>
+              <div class="item" value="BOB">Bolivia Boliviano ($b)</div>
+              <div class="item" value="BAM">Bosnia and Herzegovina Convertible Marka (KM)</div>
+              <div class="item" value="BWP">Botswana Pula (P)</div>
+              <div class="item" value="BGN">Bulgaria Lev (лв)</div>
+              <div class="item" value="BGL">Bulgaria Lev (лв)</div>
+              <div class="item" value="BRL">Brazil Real (R$)</div>
+              <div class="item" value="BND">Brunei Darussalam Dollar ($)</div>
+              <div class="item" value="KHR">Cambodia Riel (៛)</div>
+              <div class="item" value="CAD">Canada Dollar ($)</div>
+              <div class="item" value="KYD">Cayman Islands Dollar ($)</div>
+              <div class="item" value="CLP">Chile Peso ($)</div>
+              <div class="item" value="CNY">China Yuan Renminbi (¥)</div>
+              <div class="item" value="COP">Colombia Peso ($)</div>
+              <div class="item" value="CRC">Costa Rica Colon (₡)</div>
+              <div class="item" value="HRK">Croatia Kuna (kn)</div>
+              <div class="item" value="CUP">Cuba Peso (₱)</div>
+              <div class="item" value="CZK">Czech Republic Koruna (Kč)</div>
+              <div class="item" value="DKK">Denmark Krone (kr)</div>
+              <div class="item" value="DOP">Dominican Republic Peso (RD$)</div>
+              <div class="item" value="XCD">East Caribbean Dollar ($)</div>
+              <div class="item" value="EGP">Egypt Pound (£)</div>
+              <div class="item" value="SVC">El Salvador Colon ($)</div>
+              <div class="item" value="EEK">Estonia Kroon (kr)</div>
+              <div class="item" value="EUR">Euro Member Countries (€)</div>
+              <div class="item" value="FKP">Falkland Islands (Malvinas) Pound (£)</div>
+              <div class="item" value="FJD">Fiji Dollar ($)</div>
+              <div class="item" value="GHC">Ghana Cedis (¢)</div>
+              <div class="item" value="GIP">Gibraltar Pound (£)</div>
+              <div class="item" value="GTQ">Guatemala Quetzal (Q)</div>
+              <div class="item" value="GGP">Guernsey Pound (£)</div>
+              <div class="item" value="GYD">Guyana Dollar ($)</div>
+              <div class="item" value="HNL">Honduras Lempira (L)</div>
+              <div class="item" value="HKD">Hong Kong Dollar ($)</div>
+              <div class="item" value="HUF">Hungary Forint (Ft)</div>
+              <div class="item" value="ISK">Iceland Krona (kr)</div>
+              <div class="item" value="INR" selected="selected">Indian Rupee (₹)</div>
+              <div class="item" value="IDR">Indonesia Rupiah (Rp)</div>
+              <div class="item" value="IRR">Iran Rial (﷼)</div>
+              <div class="item" value="IMP">Isle of Man Pound (£)</div>
+              <div class="item" value="ILS">Israel Shekel (₪)</div>
+              <div class="item" value="JMD">Jamaica Dollar (J$)</div>
+              <div class="item" value="JPY">Japan Yen (¥)</div>
+              <div class="item" value="JEP">Jersey Pound (£)</div>
+              <div class="item" value="KZT">Kazakhstan Tenge (лв)</div>
+              <div class="item" value="KPW">Korea (North) Won (₩)</div>
+              <div class="item" value="KRW">Korea (South) Won (₩)</div>
+              <div class="item" value="KGS">Kyrgyzstan Som (лв)</div>
+              <div class="item" value="LAK">Laos Kip (₭)</div>
+              <div class="item" value="LVL">Latvia Lat (Ls)</div>
+              <div class="item" value="LBP">Lebanon Pound (£)</div>
+              <div class="item" value="LRD">Liberia Dollar ($)</div>
+              <div class="item" value="LTL">Lithuania Litas (Lt)</div>
+              <div class="item" value="MKD">Macedonia Denar (ден)</div>
+              <div class="item" value="MYR">Malaysia Ringgit (RM)</div>
+              <div class="item" value="MUR">Mauritius Rupee (₨)</div>
+              <div class="item" value="MXN">Mexico Peso ($)</div>
+              <div class="item" value="MNT">Mongolia Tughrik (₮)</div>
+              <div class="item" value="MZN">Mozambique Metical (MT)</div>
+              <div class="item" value="NAD">Namibia Dollar ($)</div>
+              <div class="item" value="NPR">Nepal Rupee (₨)</div>
+              <div class="item" value="ANG">Netherlands Antilles Guilder (ƒ)</div>
+              <div class="item" value="NZD">New Zealand Dollar ($)</div>
+              <div class="item" value="NIO">Nicaragua Cordoba (C$)</div>
+              <div class="item" value="NGN">Nigeria Naira (₦)</div>
+              <div class="item" value="NOK">Norway Krone (kr)</div>
+              <div class="item" value="OMR">Oman Rial (﷼)</div>
+              <div class="item" value="PKR">Pakistan Rupee (₨)</div>
+              <div class="item" value="PAB">Panama Balboa (B/.)</div>
+              <div class="item" value="PYG">Paraguay Guarani (Gs)</div>
+              <div class="item" value="PEN">Peru Nuevo Sol (S/.)</div>
+              <div class="item" value="PHP">Philippines Peso (₱)</div>
+              <div class="item" value="PLN">Poland Zloty (zł)</div>
+              <div class="item" value="QAR">Qatar Riyal (﷼)</div>
+              <div class="item" value="RON">Romania New Leu (lei)</div>
+              <div class="item" value="RUB">Russia Ruble (руб)</div>
+              <div class="item" value="SHP">Saint Helena Pound (£)</div>
+              <div class="item" value="SAR">Saudi Arabia Riyal (﷼)</div>
+              <div class="item" value="RSD">Serbia Dinar (Дин.)</div>
+              <div class="item" value="SCR">Seychelles Rupee (₨)</div>
+              <div class="item" value="SGD">Singapore Dollar ($)</div>
+              <div class="item" value="SBD">Solomon Islands Dollar ($)</div>
+              <div class="item" value="SOS">Somalia Shilling (S)</div>
+              <div class="item" value="ZAR">South Africa Rand (R)</div>
+              <div class="item" value="LKR">Sri Lanka Rupee (₨)</div>
+              <div class="item" value="SEK">Sweden Krona (kr)</div>
+              <div class="item" value="CHF">Switzerland Franc (CHF)</div>
+              <div class="item" value="SRD">Suriname Dollar ($)</div>
+              <div class="item" value="SYP">Syria Pound (£)</div>
+              <div class="item" value="TWD">Taiwan New Dollar (NT$)</div>
+              <div class="item" value="THB">Thailand Baht (฿)</div>
+              <div class="item" value="TTD">Trinidad and Tobago Dollar (TT$)</div>
+              <div class="item" value="TRY">Turkey Lira (TL)</div>
+              <div class="item" value="TRL">Turkey Lira (₤)</div>
+              <div class="item" value="TVD">Tuvalu Dollar ($)</div>
+              <div class="item" value="UAH">Ukraine Hryvna (₴)</div>
+              <div class="item" value="GBP">United Kingdom Pound (£)</div>
+              <div class="item" value="USD">United States Dollar ($)</div>
+              <div class="item" value="UYU">Uruguay Peso ($U)</div>
+              <div class="item" value="UZS">Uzbekistan Som (лв)</div>
+              <div class="item" value="VEF">Venezuela Bolivar Fuerte (Bs)</div>
+              <div class="item" value="VND">Viet Nam Dong (₫)</div>
+              <div class="item" value="YER">Yemen Rial (﷼)</div>
+              <div class="item" value="ZWD">Zimbabwe Dollar (Z$)</div>
+            </div>
           </div>
+        </div>
+          
           <div class="field">
             <span>Round Off</span>
             <div class="ui selection dropdown">
@@ -694,39 +847,6 @@
               <div class="item" timeZoneId="82" gmtAdjustment="GMT+13:00" useDaylightTime="0" value="13">(GMT+13:00) Nuku'alofa</div>
             </div>
           </div>
-        </div>
-
-        <div class="field">
-          <span>Maps</span>
-            <div id="map" style="z-index:0;">
-              <script>
-                var mymap = L.map('map').setView([51.505, -0.09], 13);
-
-                L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpandmbXliNDBjZWd2M2x6bDk3c2ZtOTkifQ._QA7i5Mpkd_m30IGElHziw', {
-                  maxZoom: 18,
-                  attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
-                    '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-                    'Imagery © <a href="http://mapbox.com">Mapbox</a>',
-                  id: 'mapbox.streets'
-                }).addTo(mymap);
-
-                L.marker([51.5, -0.09]).addTo(mymap)
-                  .bindPopup("<b>Yo!</b><br />Is this your store?").openPopup();
-
-
-                var popup = L.popup();
-
-                function onMapClick(e) {
-                  popup
-                    .setLatLng(e.latlng)
-                    .setContent("You clicked the map at " + e.latlng.toString())
-                    .openOn(mymap);
-                }
-
-                mymap.on('click', onMapClick);
-
-              </script>
-            </div>
         </div>
 
         <div class="inline field">

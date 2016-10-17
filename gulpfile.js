@@ -1,11 +1,12 @@
 const elixir = require('laravel-elixir');
+var gulp = require('gulp');
+
+var watch = require('./resources/assets/semantic/tasks/watch');
+var build = require('./resources/assets/semantic/tasks/build');
+
 
 //var watch = require('./resources/assets/semantic/tasks/watch');
 //var build = require('./resources/assets/semantic/tasks/build');
-
-var watchSemantic = require('./resources/assets/semantic/tasks/watch-dev');
-require('./resources/assets/semantic/tasks/build');
-elixir.extend('watchSemantic',watchSemantic);
 
 // import task with a custom task name
 //gulp.task('watch-ui', 'Watch UI for Semantic UI', watch);
@@ -24,7 +25,6 @@ elixir.extend('watchSemantic',watchSemantic);
 
 elixir(mix => {
     mix.browserify('main.js');
-    mix.watchSemantic();
 
     // Start New
 	mix

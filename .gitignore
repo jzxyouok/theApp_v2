@@ -9,3 +9,4 @@ Vagrantfile
 *.DS_Store
 .vagrant/
 .vagrant
+public/.DS_Store
