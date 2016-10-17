@@ -4,6 +4,9 @@ var gulp = require('gulp');
 var watch = require('./resources/assets/semantic/tasks/watch');
 var build = require('./resources/assets/semantic/tasks/build');
 
+gulp.task('watch', watch);
+gulp.task('build', build);
+
 
 //var watch = require('./resources/assets/semantic/tasks/watch');
 //var build = require('./resources/assets/semantic/tasks/build');
