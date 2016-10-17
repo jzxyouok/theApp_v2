@@ -55,7 +55,14 @@
 	 	position: absolute !important; 
 	 	left: 0 !important; 
 	 	bottom: 0 !important;
+    width: 210px;
 	 }
+   .bottom_sticky_collapsed {
+    position: absolute !important; 
+    left: 0 !important; 
+    bottom: 0 !important;
+    width: 60.31px;
+   }
 </style>
 
 <script type="text/javascript">
@@ -68,6 +75,7 @@
 		    $(".sidebar-item-name").toggleClass("sidebar-item-name-collapsed").toggleClass("sidebar-item-name-expanded");
 		    $(".sidebar-item-icon").toggleClass("sidebar-item-icon-collapsed").toggleClass("sidebar-item-icon-expanded");
 		    $(".sidebar-item-icon-dropdown").toggleClass("sidebar-item-icon-dropdown-collapsed");
+        $(".bottom_sticky").toggleClass("bottom_sticky_collapsed");
     	});
 
     });
@@ -92,7 +100,7 @@
 	</a>
 
 
-  	<div class="ui left pointing dropdown item">
+  	<div class="ui inverted grey left pointing dropdown item">
 
 	    <i class="bar chart icon sidebar-item-icon sidebar-item-icon-expanded"></i> 
 	    <i class="dropdown icon sidebar-item-icon-dropdown"></i>
